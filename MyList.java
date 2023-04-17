@@ -15,7 +15,7 @@ public class MyList<E> {
     //src là mảng nguồn muốn sao chép
     //srcPos là vị trí phần tử bắt đầu sẽ sao chép trên mảng nguồn
     //dest là mảng đích muốn sao chép từ mảng nguồn sang mảng đích
-    //destPos là vị trí phần tử bắt đầu trên mảng đích mà mảng nguồn sao chép sang
+    //destPos là vị trí phần tử bắt đầu trên mảng đích mà mảng nguồn sao chép sang( vị trí bắt đầu của mảng mới )
     //length là số phần tử muốn sao chép từ mảng nguồn sang mảng đích
 
     private void ensureCapacity(){
@@ -52,19 +52,17 @@ public class MyList<E> {
     }
 
     public void remove(int index){
-
         for (int i = 0; i < elements.length; i++) {
             if(i == index){
                 for (int j = index; j < elements.length - 1; j++) {
                     elements[j] = elements[j + 1];
                     index++;
                 }
-                elements[elements.length -1] = null;
-
+                elements[elements.length -1] = 0;
+             break;
             }
-            size--;
-            break;
         }
+
     }
     public int size(){
         ensureCapacity();
@@ -97,6 +95,8 @@ public class MyList<E> {
     }
     @Override
     public String toString() {
+        String a = "a";//ko thay đổi được
+        a = a + "bcd";
         StringBuilder result = new StringBuilder("[");
 
         for (int i = 0; i < size; i++) {
