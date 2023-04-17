@@ -1,8 +1,6 @@
-package excercise_ss09_dsa_list;
+package excercise_ss09_dsa_list.excersice_array_list;
 
-import ss09_dsa_list.MyArrayList;
-
-import java.util.ArrayList;
+import excercise_ss09_dsa_list.excersice_array_list.MyList;
 
 public class MyListTest {
     public static void main(String[] args) {
@@ -18,6 +16,9 @@ public class MyListTest {
 //        System.out.println("So sánh 2 chuỗi " + list.indexOf(2));
 //        list.clear();
 //        System.out.println(list.toString());
+
+        list.clone();
+        System.out.println("Mảng đã được clone " + list);
         for (int i = 0; i < list.size; i++) {
             System.out.println(list.get(i));
         }

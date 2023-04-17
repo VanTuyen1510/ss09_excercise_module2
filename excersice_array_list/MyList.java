@@ -1,6 +1,7 @@
-package excercise_ss09_dsa_list;
+package excercise_ss09_dsa_list.excersice_array_list;
 
-import ss09_dsa_list.MyArrayList;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyList<E> {
     int size = 0;
@@ -55,7 +56,7 @@ public class MyList<E> {
         for (int i = 0; i < elements.length; i++) {
             if(i == index){
                 for (int j = index; j < elements.length - 1; j++) {
-                    elements[j] = elements[j + 1];
+                    elements[j] = elements[j + 1];  // gán bên phải qua trái
                     index++;
                 }
                 elements[elements.length -1] = 0;
@@ -79,6 +80,8 @@ public class MyList<E> {
         }
         return false;
     }
+
+    //Phương thức indexOf() trả về chỉ số của giá trị ký tự đã cho hoặc chuỗi con. Nếu không tìm thấy trả lại giá trị -1. Chỉ số (index) được đếm từ 0.
     public int indexOf(E o){
         for (int i = 0; i < elements.length; i++) {
             if(o.equals(elements[i])){
@@ -93,6 +96,15 @@ public class MyList<E> {
             size = 0;
         }
     }
+
+    public E clone(){
+        E[] cloneElements = (E[]) new Object[size * 2];
+        for (int i = 0; i < elements.length; i++) {
+            cloneElements[i] = (E) elements[i];
+        }
+        return (E) cloneElements;
+    }
+
     @Override
     public String toString() {
         String a = "a";//ko thay đổi được
